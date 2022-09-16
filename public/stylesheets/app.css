@@ -1,0 +1,472 @@
+.blue-button{
+    background-color: blue;
+    color: white;
+    padding: 0.5rem 2rem;
+    border: 1px solid blue;
+    border-radius: 10px;
+}
+
+.blue-button:hover{
+    background-color: rgb(43, 72, 235);
+}
+.black-button{
+    background-color: black;
+    color: white;
+    padding: 0.5rem 2rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.black-button:hover{
+    background-color: rgb(31, 30, 30);
+}
+
+/* Index page starts*/
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 1rem;
+}
+header h1{
+    color: blue;
+    font-weight: 700;
+    letter-spacing: 0.7rem;
+}
+header p{
+    width: 70vw;
+    letter-spacing: 0.05rem;
+    color: gray;
+    font-size: 1rem;
+}
+header p:hover{
+    color: black;
+}
+
+.boxes{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 100.8vw;
+    min-height: 70vh;
+    background-color:rgb(191, 191, 159);
+}
+
+.boxes aside .container-box{
+    border: 1px solid rgb(205, 205, 205);
+    border-radius: 10px;
+    padding: 1rem;
+    background-color:white;
+}
+.boxes aside .container-box div h2{
+    color: rgba(129, 127, 127, 0.8);
+}
+.boxes aside .container-box .link-button{
+    display: flex;
+    justify-content: center;
+}
+
+.boxes aside .container-box .link-button form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.refer{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+}
+
+.refer .detail-input h6{
+    text-align: center;
+    color: royalblue;
+    letter-spacing: 0.1rem;
+}
+
+.refer .detail-input form input{
+    width: 17vw;
+    height: 4vh;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.refer .detail-input form button{
+    padding: 2px 7px;
+}
+@media (max-width: 580px){
+    header h1{ 
+        margin-top: 2rem;
+        font-weight: 600;
+    }
+    header p {
+        font-size: 0.5rem;
+        letter-spacing: 0;
+    }
+    .boxes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        width: 102vw;
+    }
+    .boxes aside .container-box{
+        width: 90vw;
+        margin: 0.8rem;
+    }
+}
+
+@media (width:820px){
+    .boxes aside .container-box{
+        padding: 2rem 0.8rem;
+    }
+}
+
+/* Index page starts*/
+
+/* Navbar CSS starts */
+
+.navbar_col{
+    height: 100vh;
+    background-color: blue; 
+}
+aside .heading{
+    height: 30%;
+}
+aside h2{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+aside div #brand_name{
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 15%;
+} 
+
+.navbar_items{
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.navbar_col ul li{
+    background-color: rgba(4, 72, 174, 80%);
+    margin: 15px 60px;
+}
+
+aside li a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: white;
+    font-weight: 500;
+    padding: 12px 50px;
+}
+
+aside li a:hover {
+    color: peachpuff;
+    font-weight: bold;
+}
+
+ul div:nth-of-type(1) li{
+    margin-top: 0;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgba(217, 217, 217, 83);
+}
+ul div:nth-of-type(1) li a{
+    color: black;
+}
+.navbar_item{
+    margin: 30px;
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    list-style: none; 
+    letter-spacing: 0.1rem;
+}
+.navbar_item:hover{
+    background-color: crimson;
+}
+
+
+ul p{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 30px;
+    margin: 0 10px;
+    font-weight: 500;
+}
+ul p span {
+    font-size: 0.5rem;
+    font-weight: bold;
+    color: rgb(242, 240, 240);
+}
+
+
+/* Navbar CSS ends */
+
+/* Home page middle section */
+
+.formInput{
+    width: 25vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formInput label{
+    font-size: medium;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.formInput input{
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.formInput div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.formInput div button{
+    background-color: blue;
+    color: white;
+    padding: 7px;
+    border: 1px solid blue;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.formInput div button:hover{
+    background-color: rgb(43, 72, 235);
+}
+
+.formInput div button:nth-child(2){
+    background-color: crimson;
+    border: 1px solid crimson;
+}
+.formInput div button:nth-child(2):hover{
+    background-color: red;
+}
+
+/* Home page middle section */
+
+/* Home page right side-profile section */
+div .right-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80vh;
+    margin-right: 15px;
+
+}
+
+div .profile_section{
+    display: flex;
+    justify-content: center;
+}
+
+div .profile_section p{
+    font-size: medium;
+    font-weight: 600;
+    margin: 10px 25px 0 0;
+}
+div .profile_section a{
+    text-decoration: none;
+    color: black;
+}
+
+div .profile_section .logout{
+    background-color: crimson;
+    color: white;
+    padding: 7px 12px;
+    border: 1px solid crimson;
+    border-radius: 10px;
+}
+
+div .profile_section .logout:hover{
+    background-color: red;
+}
+
+div .info-box{
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 52vh;
+    padding: 15px;
+}
+
+/* Home page right side-profile section */
+
+/* Team page body section */
+
+div .logout-btn{
+    height: 20vh;
+    width: 65vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+div .logout-btn .profile-items {
+    margin: 10px 25px 0 0;
+}
+
+div .logout-btn .profile-items a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: medium;
+    margin: 10px 25px 0 25px;
+}
+
+div .logout-btn .logout{
+    background-color: crimson;
+    color: white;
+    padding: 7px 12px;
+    border: 1px solid crimson;
+    border-radius: 10px;
+}
+div .logout-btn .logout:hover{
+    background-color: red;
+}
+
+div .body-section{
+    height: 60vh;
+    width: 55vw;
+    margin: 50px 0;
+}
+
+div .body-section .heading-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+div .body-section .heading-section h1{
+    margin:5px 50px ;
+    font-weight: 600;
+}
+
+div .body-section .heading-section button{
+    padding: 10px 18px;
+    background-color: rgba(54, 108, 190, 100);
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+div .body-section .heading-section button:hover{
+    background-color: blue;
+}
+div .body-section .heading-section button h3{
+    color: white;
+    font-size: xx-large;
+}
+
+div .body-section .team-data li {
+    margin:0 20px ;
+    color: gray;
+    font-size: x-large;
+    list-style: none;
+}
+
+/* Team page body section */
+
+/* Adding Team page body section */
+
+div .container-body{
+    width: 60vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+div .container-body h1{
+    color: rgba(0, 0, 255, 70%);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 50px;
+}
+div .container-body p{
+    color: rgba(0, 0, 0, 50%);
+    font-size: 30px;
+    margin-top: -15px;
+}
+
+div .container-body div label{
+    font-size: medium;
+    font-weight: 500;
+}
+
+div .container-body div input{
+    padding: 5px 50px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+}
+div .container-body div small{
+    font-size: 10px;
+    margin-top: -5px;
+}
+
+div .container-body .submit{
+    background-color: blue;
+    color: white;
+    padding: 7px;
+    border: 1px solid blue;
+    margin: 20px 0px;
+    border-radius: 10px;
+}
+/* Adding Team page body section */
+
+
+/* Adding Insights page body section */
+
+
+.table-container{
+    width: 50vh;
+    height: 50vh;
+    overflow-y: scroll;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+.table-container::-webkit-scrollbar{
+    display: none;  
+}
+
+div .table-heading th h6{
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    margin: 0.7rem;
+    border-radius: 4px;
+}
+div .table-data td p{
+    background-color: rgb(215, 215, 215);
+    color: black;
+    padding: 5px; 
+    margin: 0 0.8rem;
+    text-align: center;
+
+}
+div .body-section .heading-section form button{
+    padding:0.1rem 0.4rem;
+    color: white;
+}
+
+/* Adding Insights page body section */
+
+

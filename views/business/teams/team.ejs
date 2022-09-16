@@ -1,0 +1,29 @@
+<% layout('layout/boilerplate')%>
+
+<div class="col-9">
+    <%- include('../../partials/flash') %>
+    <div class="logout-btn">
+        <div class="profile-items">
+            <a href="#"> <%= currentAccountName %> </a> 
+        </div>
+        <form action="/firm/logout" method="post">
+            <button class="logout">Logout</button>
+        </form>
+    </div>
+    <div class="body-section">
+        <div class="heading-section">
+            <h1>Team List</h1>
+            <form action="/firm/addteam">
+                <button><h3>+</h3></button>
+            </form>
+        </div>
+        <hr>
+        <div class="team-data">
+            <ol>
+                <% for(let team of teamList.employees) {%> 
+                    <li>- <%= team.username%></li>
+                    <% } %> 
+            </ol>
+        </div>
+    </div>
+</div>

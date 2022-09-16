@@ -1,0 +1,51 @@
+<% layout('layout/boilerplate')%>
+
+<div class="col-6">
+    <%- include('../partials/flash')  %> 
+    <aside class="middle_col container-sm">
+        <div class="userinput_section">
+            <form action="/home/start" method="post" class="formInput">
+                <label for="employee_num">Employee ID: </label>
+                <input type="text" name="username" id="employee_num" placeholder="e.g. Nishan123">
+                <div class="buttons">
+                    <button class="starttrack">Start Work</button>
+                    <button class="stoptrack" formaction="/home/stop">End Work</button>
+                </div>
+            </form>
+        </div>
+    </aside>
+</div>
+<div class="col-3">
+    <aside class="right-col">
+        <div class="profile_section">
+            <div class="profile-items">
+                <p><a href="#"> <%= currentAccountName %> </a> </p>
+            </div>
+            <form action="/firm/logout" method="post">
+                <button class="logout">Logout</button>
+            </form>
+        </div>
+        <div class="info-box">
+            <div class="time-info">
+                <h2 id="time-info"> </h2>
+                <h2><%= Date().slice(4,10) %></h2>
+            </div>
+            <hr>
+            <div class="staff-info">
+                <p>On-duty Employee</p>
+                <hr>
+                <ul class="staff-info">
+                    <% if(typeof(onDutyUser)==='string'){ %> 
+                        <li>Noone have started work</li>
+                    <% } else{ %> 
+                        <% for(User of onDutyUser){ %> 
+                        <li><%= User.username  %> </li>
+                        <% } %> 
+                    <% } %>      
+                </ul>
+            </div>
+        </div>
+    </aside>
+</div>
+<script src="/javascripts/timedisplay.js"></script> 
+

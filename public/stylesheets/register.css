@@ -1,0 +1,132 @@
+/* register User page */
+button {
+    border: 1px solid #044bae;
+    padding: 10px 18px;
+    background-color: #044bae;
+    color: white;
+    font-weight: 700;
+    border-radius: 30px;
+}
+button:hover{
+    padding: 12px 20px ; 
+    background-color: rgb(2, 74, 199);
+}
+
+.heading-group {
+    display: flex;
+    justify-content: space-between;
+    margin-left:20px;
+    padding: 20px;
+}
+
+.heading-group .brand-name a{
+    color: blue;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    letter-spacing: 0.3rem;
+    text-decoration: none;
+}
+
+.input-box input{
+    border: 1.5px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px;
+}
+.input-box input:hover{
+    border: 1.5px solid blue;
+}
+.input-box label{
+    font-size: 0.8rem;
+    font-weight: 100;
+    color: rgb(80, 78, 78);
+}
+
+.input-box button:hover {
+    border: 1px solid white;
+}
+
+/* SIGN UP COntainer */
+
+
+
+.main-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+    width: 100%;
+    height: 80vh;
+    background-color: #e8e7e7;
+}
+.main-container .brand-name h2{
+    color: blue;
+    text-transform: uppercase;
+    font-size: 3em;
+    letter-spacing: 0.3rem;
+}
+.main-container .brand-name span{
+    color: rgb(88, 87, 87);
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.1rem;
+}
+
+
+aside .sign-up-container{
+    display: flex;
+}
+
+aside .sign-up h1{
+    color: #00f;
+    font-size: 3.5rem;
+    margin-bottom: 0;
+}
+aside .sign-up h3{
+    color: grey;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    margin-top: 0;  
+}
+
+aside .input-boxes{
+    display: flex;
+    flex-direction: column;
+}
+
+aside .input-box{
+    margin: 5px;
+    border: 1.5px solid rgb(217, 217, 217);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+aside form #password{
+    display: none;
+}
+aside .input-box:hover{
+    border: 2.5px solid blue;
+    
+}
+aside .input-box:nth-of-type(1){
+    margin-top: 20px;
+}
+aside .input-boxes button{
+    margin: 20px 10px;  
+}
+
+
+
+/* Footer section */
+/* .footer-container h4{
+    color: rgb(132, 130, 130);
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+} */
+
+
+/* register User page */
+

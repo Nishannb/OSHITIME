@@ -1,0 +1,65 @@
+<% layout('layout/boilerplate')%>
+
+<div class="col-9">
+    <div class="logout-btn">
+        <div class="profile-items">
+            <a href="#"> <%= currentAccountName %> </a> 
+        </div>
+        <form action="/firm/logout" method="post">
+            <button class="logout">Logout</button>
+        </form>
+    </div>
+    <div class="body-section">
+        <div class="heading-section">
+            <h1>Team Insights</h1>
+            <form action="/firm/insights">
+                <select name="month" id="month">
+                    <option value="" disabled selected>Select Month</option>
+                    <option value="Jan">Janauray</option>
+                    <option value="Feb">Feburary</option>
+                    <option value="Mar">March</option>
+                    <option value="Apr">April</option>
+                    <option value="May">May</option>
+                    <option value="Jun">June</option>
+                    <option value="Jul">July</option>
+                    <option value="Aug">August</option>
+                    <option value="Sep">Septmeber</option>
+                    <option value="Oct">October</option>
+                    <option value="Nov">Novemeber</option>
+                    <option value="Dec">December</option>
+                </select>
+                <button class="month-submit">Submit</button>
+            </form>
+        </div>
+        <hr>
+        <div class="table-container">
+            <table>
+                <tr class="table-heading">
+                    <th>
+                        <h6>Employee</h6>
+                    </th>
+                    <th>
+                        <h6>Month</h6>
+                    </th>
+                    <th>
+                        <h6>Total Worked Hours</h6>
+                    </th>
+                </tr>
+                <% for(let team of teamList){ %> 
+                    <tr class="table-data">
+                        <td>
+                            <p><%= team.employee  %> </p> 
+                        </td>
+                        <td>
+                            <p><%= currentMonth %> </p>
+                        </td>
+                        <td>
+                            <p><%= team.workTime  %></p>
+                        </td>
+                    </tr>
+                <% } %> 
+                
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSHI TIME</title>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+    <header>
+        <h1>OSHI TIME</h1>
+        
+        <p>Oshi Time is free-for-all application which aspires to be one stop solution for Businesses to keep track of their part-time employees worktime. 
+            With this, Oshi Time is radically digitizing paper Payslip in Japan as, Businesses using Oshi Time are able to provide their part-time employees with streaming Payslip. 
+        </p>
+        <p>As our next project is under development, we are pleased to announce 
+            our second product of Oshi ecosystem that will be salary live streaming application which will provide part-time employees instant access to their salary.  </p>
+    </header> 
+    <main>
+    <section class="row boxes">
+            <aside class="col-sm-4">
+                <div class="container-box">
+                    <div class="heading">
+                        <h2>For Business</h2>
+                    </div>
+                    <hr>
+                    <div class="detail-info">
+                        <ul>
+                            <li>Allows Business to track employees worktime</li>
+                            <li>Oshi Time is free for all</li>
+                            <li>Save money on other tracking software</li>
+                        </ul>
+                    </div>
+                    <div class="link-button">
+                        <form action="/firm/register">
+                            <button class="black-button">Register</button>
+                            <small>Already have an Account? Click below..</small>
+                            <button class="blue-button" formaction="/firm/login">Log In</button>
+                        </form>
+                    </div>
+                </div>
+            </aside>
+            <aside class="col-sm-4">
+                <div class="container-box">
+                    <div class="heading">
+                        <h2>For Employee</h2>
+                    </div>
+                    <hr>
+                    <div class="detail-info">
+                        <ul>
+                            <li>Generates & Live Streams everyday earnings</li>
+                            <li>Immediate access to salary fund on Oshi Wallet(soon available on next update)</li>
+                        </ul>
+                    </div>
+                    <div class="link-button">
+                        <form action="/user/register">
+                            <button class="black-button">Register</button>
+                            <small>Already have an Account? Click below..</small>
+                            <button class="blue-button" formaction="/user/login">Log In</button>
+                        </form>
+                    </div>
+                </div>
+            </aside>
+            <!-- <div class="refer">
+                <div class="detail-input">
+                    <h6>Refer OSHI TIME to your workplace: </h6>
+                    <form action="/nowhere" id="google-sheet" method="post">
+                        <input type="text" placeholder="Workplace Name" name="workplace" required>
+                        <input type="text" placeholder="Location: Nearest station" name="workplaceLocation" required>
+                        <button class="submit blue-button" value="Submit">Send</button>
+                    </form>
+                </div>
+            </div> -->
+            <%- include('./partials/footer') %>
+    </section>
+    <script src="/javascripts/googlesheet-worplace-refer.js"></script>
+</body>
+</html>

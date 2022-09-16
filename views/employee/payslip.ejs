@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSHI PaySlip</title>
+    <link rel="stylesheet" href="/stylesheets/payslip.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">  
+</head>
+<body>
+    <section class="container-box">
+        <div class="row">
+            <div class="col-sm-8 offset-sm-2">
+                <div class="payslip">
+                    <div class="header">
+                        <h2><a href="#">--Oshi Payslip--</a></h2>
+                    </div>
+                    <div class="rect-card">
+                        <h6>Your Total Earnings: </h6>
+                        <h2>¥<%= (totalWork*perHour) %></h2>
+                        <small>Hourly wage: <%= perHour %> /Hour</small>
+                    </div>
+                    <div class="related-info">
+                        <div class="sub-card">
+                            <p>Today's <br> Earnings: </p>
+                            <h4>¥<%= (todayWork*perHour) %>  </h24>
+                        </div>
+                        
+                        <div class="sub-card">
+                            <p>Month:</p>
+                            <p>Sept</p>
+                        </div>
+                        <div class="sub-card">
+                            <p>Total days <br> worked:</p>
+                            <p><%= shift %>  </p>
+                        </div>
+                        <div class="sub-card">
+                            <p>Total hours<br> worked: </p>
+                            <p><%= totalWork %>  </p>
+                        </div>
+                        <div class="sub-card">
+                            <p>Tax deductable:</p>
+                            <p>----</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../partials/footer')  %> 
+
+</body>
+</html>

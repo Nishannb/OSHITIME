@@ -1,0 +1,58 @@
+
+.container-box{
+    width: auto;
+    min-height: 100vh;
+    background-color: rgba(89, 124, 249, 1);
+}
+
+
+div .col-sm-8{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+div .payslip{
+    margin: 1.4rem 0;
+    padding: 1.4rem 7rem;
+    border: 3px solid rgb(208, 207, 207);
+    border-radius: 15px;
+    background-color: whitesmoke;
+}
+
+div .payslip .header{
+    margin-bottom: 1.4rem;
+    display: flex;
+    justify-content: center;
+}
+div .payslip .header a{
+    text-decoration: none;
+}
+
+.rect-card{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2rem 3rem;
+    background-color: rgb(128, 53, 128);
+    color: whitesmoke;
+}
+
+.related-info .sub-card{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    margin-top: 10px ;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 580px){
+    .container-box{
+        background-color: white;
+    }
+    div .payslip{
+        padding: 1rem;
+        border: none;
+    }
+
+}
