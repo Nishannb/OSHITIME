@@ -18,7 +18,7 @@ const homeRoute = require('./routes/home');
 const Employee = require('./models/employee');
 const mongoSanitize=require('express-mongo-sanitize');
 const MongoStore = require('connect-mongo');
-const dbUrl= process.env.dbURL || 'mongodb://localhost:27017/testOshiTime';
+const dbUrl= process.env.DB_URL || 'mongodb://localhost:27017/testOshiTime';
 const secret= process.env.SECRET || 'thisisnotasecret'
 
 mongoose.connect(dbUrl)
