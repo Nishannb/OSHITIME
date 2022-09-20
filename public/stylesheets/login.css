@@ -1,0 +1,215 @@
+*{
+    font-family: serif;
+}
+
+main .circle{
+    width: 20rem;
+    height: 20rem;
+    background-color: red;
+    border-radius: 30%;
+    position: absolute;
+    margin: 10px;
+    z-index: -1;
+}
+
+main .circle_userpage{
+    width: 20rem;
+    height: 20rem;
+    background-color: blue;
+    border-radius: 30%;
+    position: absolute;
+    margin: 10px;
+    z-index: -1;
+}
+
+
+/* rgb(0, 255, 132) */
+
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+    width: 100vw;
+}
+
+.rect-box{
+    width: 80vw;
+    height: 80vh;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.rect-box .lft-square{
+    width: 50%;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.lft-square .square-heading h2{
+    color: grey;
+    display: block;
+    text-align: center;
+}
+
+.lft-square .square-heading h2 span{
+    font-size: 200%;
+    color: rgb(33, 33, 224);
+    display: block;
+    margin-top: 10px;
+}
+
+.lft-square .square-heading small{
+    color: grey;
+    display: block;
+    text-align: center;
+}
+
+.rect-box .rgt-square{
+    width: 50%;
+    background-color: red;
+}
+
+
+form{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form input{
+    padding: 0.8rem 3rem;
+    border: 0.5px solid rgba(128, 128, 128, 0.6);
+    border-radius: 10px;
+    display: block;
+    margin: 15px 10px;
+}
+
+form button{
+    padding: 0.5rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    background-color: blue;
+    color: white;
+    margin: auto; 
+    
+}
+
+.input-content .extra-content{
+    color: grey;
+    display: block;
+    text-align: center;
+}
+
+.input-content .extra-content span{
+    color: orangered;
+    font-weight: 550;
+    letter-spacing: 1px;
+}
+
+.option small{
+    color: grey;
+    display: block;
+    text-align: center;
+    margin: 15px 0 5px 0;
+}
+
+form #payslip{
+    padding: 0.5rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    background-color: black;
+    color: white;
+}
+
+.rect-box .rgt-square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rgt-square .square-heading {
+    width: 80%;
+    height: auto;
+
+}
+
+.rgt-square .square-heading h1{
+    color: rgb(33, 33, 224);
+    font-size: 30px;
+    letter-spacing: 0.1rem;
+    line-height: 1rem;
+    text-align: center;
+}
+
+.rgt-square .square-heading h1 span{
+    color: white;
+    font-size: 50%;
+    font-weight: 300; 
+}
+
+.rgt-square .square-heading small{
+    color: white;
+    letter-spacing: 0.1rem;
+    line-height: 1rem;
+}
+
+.footer .container{
+    width: 100vw;
+    height: 5vh;
+    background-color: gray;
+    text-align: center;
+}
+
+.container .copyrgt{
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+
+@media (max-width: 635px){
+    .background{
+        display: none;
+    }
+    .main-container{
+        align-items: flex-start;
+    }
+    .rect-box{
+        flex-direction: column;
+        width: 95vw;
+        height: auto;
+        overflow: visible;
+    }
+    .rect-box .lft-square{
+        width: 95vw;
+        padding: 20px 0px ;
+        border-radius: 20px;
+        margin-bottom: 5px; ;
+    }
+    .rect-box .rgt-square{
+        width: auto;
+        border-radius: 20px;
+        height: 40vh;
+        margin-bottom:5px;
+    }
+    .footer .container{
+        width: 95vw;
+        border-radius: 20px;
+        margin-left: 7px ;
+    }
+
+}
+
+
+
