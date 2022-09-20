@@ -4,47 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSHI PaySlip</title>
-    <link rel="stylesheet" href="/stylesheets/register.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">   
+    <title>OSHI TIME</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
 </head>
 <body>
-    <!---Heading section-->
-    <section class="heading-group">
-        <div class="brand-name">
-            <h2><a href="#">Oshi Time</a> </h2>
+    <main>
+        <%- include('../partials/flash')  %> 
+        <div class="background">
+            <div class="circle_userpage">
+            </div>
         </div>
-    </section>
-    <!---End of Heading section-->
-    <%- include('../partials/flash')  %> 
-    <!---SIGN UP COntainer-->
-    <section class="sign-up">
-        <div class="main-container">
-            <aside class="brand-name">
-                <h2>Oshi Time <br><span>Instant Streaming <br> of Your PaySlip</span> </h2>
-            </aside>
-            <aside class="sign-up-container">
-                <div class="sign-up">
-                    <h1>Register</h1>
-                    <h3>Set your OSHI PaySlip password</h3>
-                </div>
-                <div class="signUp-inputContainer">
-                    <form class="input-boxes" action="/user/firstlogin" method="post">
-                        <input type="text" class="input-box" name="username" id="username" placeholder="Username">
-                        <small>This username is given at your workplace</small>
-                        <input type="email" class="input-box" name="email" id="email" placeholder="Email Address">
-                        <input type="password" class="input-box" name="password" id="password" value="<%= pass %>" placeholder="Old-Password">
-                        <input type="password" class="input-box" name="newPassword" id="newPassword" placeholder="New-Password">
-                        <input type="password" class="input-box" name="RePassword" id="RePassword" placeholder="Re-confirm your Password">
-                        <button>Set Password</button>
-                    </form>
-                </div>
-            </aside>
-        </div>
-    </section>
-    <!---End of SIGN UP COntainer-->
-    <!---Footer section-->
-    <%- include('../partials/footer')  %> 
-    <!---End of Footer section-->
+        <section class="main-container">
+            <div class="rect-box">
+                <aside class="lft-square">
+                    <div class="square-heading">
+                        <h2>First Login<span>Oshi Payslip</span></h2>
+                        <small>First Login is required to change password if password was set <br> from your workplace.
+                            Login for with your Oshi User account. </small>
+                    </div>
+                    <div class="input-content">
+                        <form action="/user/login" method="post">
+                            <small>Username is same as provided from your workplace</small>
+                            <input type="text" class="input-box" id="username" name="username" placeholder="Username" required>
+                            
+                            <input type="email" class="input-box" name="email" id="email" placeholder="Email Address" required>
+                            <input type="password" class="input-box" name="password" id="setpassword" value="<%= pass %>" placeholder="Old-Password" required>
+                            <input type="password" class="input-box" name="newPassword" id="newPassword" placeholder="New-Password" required>
+                            <input type="password" class="input-box" name="RePassword" id="RePassword" placeholder="Re-confirm Password" required>
+                            <button>Log In</button>
+                        </form>
+                        <div class="extra-content">
+                            <small>Don't have an Oshi User account? <a href="/user/register"> Sign Up Now </a></small>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <small>Do you want to Log In your Oshi Time Business account ?</small>
+                        <form action="/firm/login">
+                            <button id="payslip">Oshi Time Log In</button>
+                        </form>
+                    </div>
+                </aside>
+                <aside class="rgt-square">
+                    <div class="square-heading">
+                        <h1>Oshi Payslip <span>For Everyone</span></h1>
+                        <small>Oshi Payslip is a free application where users are able to view their streaming payslip anytime.
+                            With Oshi Payslip, Users are now able to be better informed on their daily and weekly earnings without waiting for monthly payslip. </small>
+                    </div>
+                </aside>
+            </div>
+            
+        </section>
+        <%- include('../partials/footer')  %>
+</main>
+    
+    <!--End of Footer section -->
 </body>
 </html>
