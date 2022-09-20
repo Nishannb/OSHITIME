@@ -5,44 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OSHI TIME</title>
-    <link rel="stylesheet" href="/stylesheets/register.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
 </head>
 <body>
-    <!---Heading section-->
-    <section class="heading-group">
+    <main>
+        <%- include('../partials/flash')  %> 
+        <div class="background">
+            <div class="circle">
+            </div>
+        </div>
+        <section class="main-container">
+            <div class="rect-box">
+                <aside class="lft-square">
+                    <div class="square-heading">
+                        <h2>Welcome to <span>Oshi Time</span></h2>
+                        <small>Login for with your Oshi Time business account. </small>
+                    </div>
+                    <div class="input-content">
+                        <form action="/firm/login" method="post">
+                            <input type="text" class="username" id="username" name="username" placeholder="Username" required>
+                            <input type="password" class="password" id="password" name="password" placeholder="Password" required>
+                            <button>Log In</button>
+                        </form>
+                        <div class="extra-content">
+                            <small>Don't have an Oshi Time account? <Span><a href="/firm/register"> Sign Up Now </a></Span></small>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <small>Do you want to Log In a User account ?</small>
+                        <form action="/user/login">
+                            <button id="payslip">Oshi Payslip Log In</button>
+                        </form>
+                    </div>
+                </aside>
+                <aside class="rgt-square">
+                    <div class="square-heading">
+                        <h1>Oshi Time <span>For Business</span></h1>
+                        <small>Oshi Time (for business) is free-for-all application which makes it easier for Businesses to keep track of their part-time employees worktime. 
+                            Together with time-tracking, Oshi Time is radically digitizing paper Payslip as, Businesses using Oshi Time are able to provide their part-time employees with streaming Payslip. </small>
+                    </div>
+                </aside>
+            </div>
+            
+        </section>
+        <%- include('../partials/footer')  %>
         
-        <div class="brand-name">
-            <h2><a href="/firm/login">Oshi Time</a> </h2>
-        </div>
-    </section>
-    <!---End of Heading section-->
+</main>
     
-    <!---SIGN UP COntainer-->
-    <section class="sign-up">  
-        <%- include('../partials/flash')  %>
-        <div class="main-container">
-            <aside class="brand-name">
-                <h2>Oshi Time <br><span> Track Working Time </span></h2>
-            </aside>
-            <aside class="sign-up-container">
-                <div class="sign-up">
-                    <h1>LOGIN</h1>
-                    <h3>SIGN IN with your account</h3>
-                </div>
-                <div class="signUp-inputContainer">
-                    <form class="input-boxes" action="/firm/login" method="post">
-                        <input type="text" class="input-box" name="username" id="username" placeholder="Business Name" required>
-                        <input type="password" class="input-box" name="password" placeholder="Password" required>
-                        <button>Login</button>
-                    </form>
-                </div>
-            </aside>
-        </div>
-    </section>
-    <!---End of SIGN UP COntainer-->
-    <!---Footer section-->
-    <%- include('../partials/footer')  %> 
-    <!---End of Footer section-->
+    <!--End of Footer section -->
 </body>
 </html>

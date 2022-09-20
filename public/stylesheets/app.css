@@ -1,3 +1,4 @@
+
 .blue-button{
     background-color: blue;
     color: white;
@@ -21,118 +22,10 @@
     background-color: rgb(31, 30, 30);
 }
 
-/* Index page starts*/
-header{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    margin-top: 1rem;
-}
-header h1{
-    color: blue;
-    font-weight: 700;
-    letter-spacing: 0.7rem;
-}
-header p{
-    width: 70vw;
-    letter-spacing: 0.05rem;
-    color: gray;
-    font-size: 1rem;
-}
-header p:hover{
-    color: black;
-}
-
-.boxes{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    width: 100.8vw;
-    min-height: 70vh;
-    background-color:rgb(191, 191, 159);
-}
-
-.boxes aside .container-box{
-    border: 1px solid rgb(205, 205, 205);
-    border-radius: 10px;
-    padding: 1rem;
-    background-color:white;
-}
-.boxes aside .container-box div h2{
-    color: rgba(129, 127, 127, 0.8);
-}
-.boxes aside .container-box .link-button{
-    display: flex;
-    justify-content: center;
-}
-
-.boxes aside .container-box .link-button form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-}
-
-.refer{
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    align-items: center;
-}
-
-.refer .detail-input h6{
-    text-align: center;
-    color: royalblue;
-    letter-spacing: 0.1rem;
-}
-
-.refer .detail-input form input{
-    width: 17vw;
-    height: 4vh;
-    border-radius: 10px;
-    border: 1px solid gray;
-}
-
-.refer .detail-input form button{
-    padding: 2px 7px;
-}
-@media (max-width: 580px){
-    header h1{ 
-        margin-top: 2rem;
-        font-weight: 600;
-    }
-    header p {
-        font-size: 0.5rem;
-        letter-spacing: 0;
-    }
-    .boxes{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        width: 102vw;
-    }
-    .boxes aside .container-box{
-        width: 90vw;
-        margin: 0.8rem;
-    }
-}
-
-@media (width:820px){
-    .boxes aside .container-box{
-        padding: 2rem 0.8rem;
-    }
-}
-
-/* Index page starts*/
-
 /* Navbar CSS starts */
 
 .navbar_col{
+    width: 23vw;
     height: 100vh;
     background-color: blue; 
 }
@@ -143,6 +36,7 @@ aside h2{
     display: flex;
     justify-content:space-around;
     align-items: center;
+    margin-top: auto;
 }
 aside div #brand_name{
     color: white;
@@ -150,13 +44,18 @@ aside div #brand_name{
     text-transform: uppercase;
     text-decoration: none;
     margin: 15%;
+    text-align: center;
 } 
 
 .navbar_items{
     color: white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
+
 .navbar_col ul li{
     background-color: rgba(4, 72, 174, 80%);
     margin: 15px 60px;
@@ -177,7 +76,6 @@ aside li a:hover {
 
 ul div:nth-of-type(1) li{
     margin-top: 0;
-    padding: 10px;
     border-radius: 20px;
     background-color: rgba(217, 217, 217, 83);
 }
@@ -212,6 +110,12 @@ ul p span {
     color: rgb(242, 240, 240);
 }
 
+@media (max-width: 750px) {
+    aside li a{
+        padding: 12px;
+    }
+    
+}
 
 /* Navbar CSS ends */
 
