@@ -60,7 +60,7 @@ router.post('/login',passport.authenticate('local', {failureFlash: true, failure
             todayWork = todayWork + todayWorkTime
         }
     }
-    res.render('employee/payslip', {todayWork, shift, totalWork, perHour})
+    res.render('employee/payslip', {todayWork, shift, totalWork, perHour, username})
 
     /* dividing milliseconds by 1000 * 60 * 60 = 3600000 to obtain in hours */
 }))

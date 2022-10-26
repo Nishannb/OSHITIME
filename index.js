@@ -21,7 +21,7 @@ const MongoStore = require('connect-mongo');
 const dbUrl= process.env.DB_URL || 'mongodb://localhost:27017/testOshiTime';
 const secret= process.env.SECRET || 'thisisnotasecret'
 
-mongoose.connect(dbUrl)
+mongoose.connect('mongodb://localhost:27017/testOshiTime')
 
 const db= mongoose.connection;
 db.on('error', console.error.bind(console, 'Connection Error'));
@@ -94,8 +94,9 @@ app.all('*', (req,res,next)=>{
 app.use((err,req,res,next)=>{
     const {status = 500}= err;
     if(!err.message) err.message= 'Something Went Wrong'
-    return res.status(status).send(`error ${err.message}`)
+    return res.status(status).render('error', {err})
 })
+
 const port = process.env.PORT || 3000;
 app.listen(port, ()=>{
     console.log(`Connection established at port ${port}`)

@@ -42,6 +42,7 @@ businessesSchema.statics.findAndValidate = async function(username, password){
     }
     const isValid = await bcrypt.compare(password, foundBusiness.password);
     return isValid ? foundBusiness: false;
+
 }
 
 module.exports = mongoose.model('Businesses', businessesSchema); 

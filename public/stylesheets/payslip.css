@@ -1,4 +1,66 @@
 
+button{
+    padding: 0.5rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    background-color: black;
+    color: white;
+}
+
+/* rgb(0, 255, 132) */
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.rect-box{
+    width: 70vw;
+    height: 90vh;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    overflow: hidden;
+    
+}
+
+.rect-box .lft-square{
+    width: 80%;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.lft-square .square-heading h2{
+    color: grey;
+    display: block;
+    text-align: center;
+}
+
+.lft-square .square-heading h2 span{
+    font-size: 100%;
+    color: rgb(33, 33, 224);
+    display: block;
+    margin-top: 10px;
+}
+
+.lft-square .square-heading small{
+    color: grey;
+    display: block;
+    text-align: center;
+}
+
+
 .container-box{
     width: auto;
     min-height: 100vh;
@@ -14,7 +76,6 @@ div .col-sm-8{
 }
 div .payslip{
     margin: 1.4rem 0;
-    padding: 1.4rem 7rem;
     border: 3px solid rgb(208, 207, 207);
     border-radius: 15px;
     background-color: whitesmoke;
@@ -32,7 +93,7 @@ div .payslip .header a{
 .rect-card{
     border: 1px solid black;
     border-radius: 5px;
-    padding: 2rem 3rem;
+    /* padding: 2rem 3rem; */
     background-color: rgb(128, 53, 128);
     color: whitesmoke;
 }
@@ -40,13 +101,95 @@ div .payslip .header a{
 .related-info .sub-card{
     border: 1px solid black;
     border-radius: 10px;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 1rem;
     margin-top: 10px ;
     display: flex;
     justify-content: space-between;
 }
 
-@media (max-width: 580px){
+.rect-box .rgt-square{
+    width: 30%;
+    background-color: rgba(0, 0, 255);
+}
+
+.extra-msg small{
+    color: grey;
+    display: block;
+    text-align: center;
+}
+
+.option{
+    width: 60%;
+}
+
+.option small{
+    color: grey;
+    display: block;
+    align-items: center;
+    text-align: center;
+    margin: 15px 0 5px 0;
+}
+
+.rect-box .rgt-square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rgt-square .square-heading {
+    width: 70%;
+    height: auto;
+}
+
+.rgt-square .square-heading h1{
+    color: white;
+    font-size: 30px;
+    letter-spacing: 0.1rem;
+    line-height: 1rem;
+    text-align: center;
+}
+
+.rgt-square .square-heading h1 span{
+    color: white;
+    font-size: 50%;
+    font-weight: 300; 
+}
+
+.rgt-square .square-heading small{
+    color: white;
+    letter-spacing: 0.1rem;
+    line-height: 1rem;
+}
+
+
+@media (max-width: 635px){
+    .background{
+        display: none;
+    }
+    .main-container{
+        align-items: flex-start;
+    }
+    .rect-box{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        width: 90vw;
+        height: 100vh;
+        overflow: visible;
+        margin-top: 15px;
+    }
+    .rect-box .lft-square{
+        width: 90vw;
+        padding: 20px 0px ;
+        border-radius: 20px;
+        margin: 5px 0 ;
+    }
+    .lft-square .square-heading h2 span{
+        font-size: 1.5rem;
+    }
+    .rect-box .rgt-square{
+        width: 90vw;
+        border-radius: 20px;
+    }
     .container-box{
         background-color: white;
     }

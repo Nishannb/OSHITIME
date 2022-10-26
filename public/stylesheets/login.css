@@ -54,7 +54,6 @@ main .circle_userpage{
     align-items: center;
 }
 
-
 .lft-square .square-heading h2{
     color: grey;
     display: block;
@@ -198,6 +197,7 @@ form #payslip{
 }
 
 
+
 @media (max-width: 635px){
     .background{
         display: none;
@@ -230,6 +230,18 @@ form #payslip{
     }
 
 }
+
+/* CSS for error page only */
+
+.rect-box .lft-square-error-page{
+    width: 80%;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CSS for error page only */
 
 
 

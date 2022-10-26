@@ -20,7 +20,7 @@ router.post('/register', wrapAsync(async(req,res)=>{
             username: username, email: email, location: nearestLocation, phoneNum: phoneNum, password: hashpw, pinCode:pinCode})
             await registerBusiness.save();
             req.session.currentAccount= registerBusiness.id;
-            req.session.currentAccountName = foundBusiness.username;
+            req.session.currentAccountName = registerBusiness.username;
             req.flash('success', 'Successfully registered your Business account')
             return res.redirect('/home')
     } else{
@@ -54,6 +54,7 @@ router.post('/logout', requireLogin, ((req,res)=>{
 
 router.get('/team', requireLogin, async(req,res)=>{
     const teamList= await Businesses.findById(req.session.currentAccount).populate('employees')
+    console.log(teamList)
     res.render('business/teams/team', {teamList})
 })
 
