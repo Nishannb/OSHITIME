@@ -15,12 +15,17 @@ router.get('/',requireLogin, async(req,res)=>{
 router.post('/start',requireLogin,wrapAsync(async(req,res)=>{
     const {username}= req.body;
     const todayDate= Date().slice(4,10) 
-    const findUser = await Employee.findOne({username});
+    const findUser = await Employee.findOne({username}); //check for error
     if(!findUser){
         req.flash('error', 'Incorrect Employee ID..')
         return res.redirect('/home');
     }
     else{
+        const checkUserActiveStatus = await OnDuty.findOne({username: `${username}`});
+        if(checkUserActiveStatus){
+            req.flash('error', 'Employee might already have logged in before, please check')
+            return res.redirect('/home')
+        } else{
         const dutyRegister= new OnDuty({username: `${username}`, onduty: true, startWork: {
             startMonth: `${todayDate}`,
             startTime: Date.now()
@@ -28,7 +33,7 @@ router.post('/start',requireLogin,wrapAsync(async(req,res)=>{
         await dutyRegister.save();
         req.flash('success', 'Workshift starts now..')
         res.redirect('/home');
-    }
+    }}
 }))
 
 

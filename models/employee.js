@@ -17,8 +17,18 @@ const employeeSchema = new Schema ({
     }], 
     perHour: {
         type: Number
+    },
+    workDetail:[{
+        workDay: {
+            type: String
+        },
+        workTime:{
+            type: String
+        }
+        }]
     }
-})
+    
+)
 
 employeeSchema.plugin(passportLocalMongoose);
 

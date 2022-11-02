@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/shifttable.css">
+    <title>Manage Shift</title>
+</head>
+<body>
+    <section>
+        <div class="brand">
+            <div class="brand-name">
+                <span>OSHI TIME</span>
+            </div>
+        </div>
+        <main>
+            <div class="weekpicker">
+                <h3>Select the time period</h3>
+                <form action="/user/schedule">
+                    <select name="timeperiod" id="timeperiod">
+                        <% newDate = date.slice(0,15) %> 
+                        <% for(let i=1; i<=5; i++){ %> 
+                            <option value="<%= date %>-<%= testDate %>"><%= date %> - <%= testDate %></option>
+                            <% date= new Date(testDate).getTime() + 86400000 %> 
+                            <% testDate = new Date(date).getTime() + 518400000 %>
+                            <% date = String(new Date(date)).slice(0,15) %> 
+                            <% testDate = String(new Date(testDate)).slice(0,15) %> 
+                        <% } %> 
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+            </div> 
+            <% const schedule = function(date){
+                return date.slice(4,15);
+            } %> 
+            <form action="/user/shift" method="post" class="user-input-form">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Schedule</th>
+                        </tr>
+                    </thead>
+                        
+                            <tbody>
+                            <% for(let i =1; i<8; i++){ %>
+                            <tr>
+                                <td class="time-td"><%= schedule(newDate) %></td>
+                                <td class="time-input-td"><input type="text" name="<%= schedule(newDate) %>" placeholder="e.g. 9-17, Preferred Time" class="peferredTime"></td>
+                            </tr>
+                            <% newDate = new Date(newDate).getTime() + 86400000
+                                newDate = String(new Date(newDate))
+                            } %> 
+                            </tbody>
+                </table>
+                        <button>Submit</button>
+            </form>
+            <a href="/user/profile" class="back-btn">Back to Payslip Page</a>
+                
+
+        </main>
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+

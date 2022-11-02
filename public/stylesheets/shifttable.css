@@ -1,0 +1,176 @@
+ 
+.brand{
+    width: auto;
+    height: 20vh;
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.brand-name span{
+    font-size: xx-large;
+    font-weight: 600;
+    letter-spacing: 1rem;
+}
+ 
+table{
+    empty-cells: show;
+    border-style: inset;
+    table-layout: fixed ;
+    width: 80vw;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+ 
+th{
+    border: 1px solid blueviolet;
+    color: white;
+    background-color: blueviolet;
+    border-radius: 5px;
+    padding: 4px;
+    font-weight: 600;
+}
+td {
+    background-color: saddlebrown;
+    border-radius: 5px;
+    padding: 12px;
+    text-align: center;
+    color: white;
+}
+td:empty{
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    text-align: center;
+}
+ 
+.weekpicker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+    border-radius: 10px;
+}
+
+.weekpicker h3{
+    margin: 7px 10px 0 0;
+    background-color: rgb(210, 207, 207);
+    color: rgb(99, 149, 201);
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+}
+
+.weekpicker form select{
+    padding: 7px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+ 
+.popup-form{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 3px dashed salmon;
+    width: fit-content;
+    background-color: rgb(183, 181, 181);
+    padding: 15px;
+    border-radius: 10px;
+}
+ 
+.popup-form input{
+    margin-top: 5px;
+}
+ 
+.show{
+    visibility: visible;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+ 
+ 
+ 
+/* Shift page  */
+ 
+.days{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.day{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.day a{
+    text-decoration: none;
+    padding: 10px 80px;
+    background-color: rgb(229, 126, 36);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: larger;
+}
+ 
+.shiftshow{
+    visibility: visible;
+    margin-top: 20px;
+    padding: 20px 50px;
+}
+
+.timetable p{
+    display: flex;
+    justify-content: center;
+    color: slategrey;
+}
+
+.back-btn{
+    text-decoration: none;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: large; 
+}
+
+/* schedule.ejs specific */
+button{
+    background-color: blue;
+    color: white;
+    padding: 0.5rem 2rem;
+    border: 1px solid blue;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.user-input-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-input-form .peferredTime{
+    padding: 6px 15px;
+    width: 60%;
+    border-radius: 5px;
+    border: none;
+}
+.user-input-form tr .time-input-td{
+    background-color: none;
+}
+
+.user-input-form button{
+    margin-top: 15px;
+}
+/* schedule.ejs specific */

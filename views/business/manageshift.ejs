@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/shifttable.css">
+    <title>Manage Shift</title>
+</head>
+<body>
+    <section>
+        <div class="brand">
+            <div class="brand-name">
+                <span>OSHI TIME</span>
+            </div>
+        </div>
+    
+        <main>
+            <div class="weekpicker">
+                <h3>Select the time period</h3>
+                <form action="/firm/manageshift">
+                    <select name="timeperiod" id="timeperiod">
+                        <% newDate = date %> 
+                        <% newTestDate = testDate %> 
+                        <% for(let i=1; i<=5; i++){ %> 
+                            <option value="<%= date %>-<%= testDate %>"><%= date %> - <%= testDate %></option>
+                            <% date= new Date(testDate).getTime() + 86400000 %> 
+                            <% testDate = new Date(date).getTime() + 518400000 %>
+                            <% date = String(new Date(date)).slice(0,15) %> 
+                            <% testDate = String(new Date(testDate)).slice(0,15) %> 
+                        <% } %> 
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="timetable">
+                <p>Double click on table cells to assign new shifts to individual</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name/Day</th>
+                            <% dateCopy = newDate %> 
+                            <% newDateCopy = newDate %> 
+                            <% for(let i=1; i<=7; i++){ %> 
+                                <th><%= dateCopy %></th>
+                                <% dateCopy = new Date(dateCopy).getTime() + 86400000 %> 
+                                <% dateCopy = String(new Date(dateCopy)).slice(0,15) %> 
+                            <% } %>
+                        </tr>
+                    </thead>
+
+                    <!-- function for fetching schedule worktime -->
+                    <% const schedule = function(user, date){
+                        date = date.slice(4,15)
+                        for(let team of teamList.employees){
+                            if(team.username === user){
+                                for (let work of team.workDetail){
+                                    if(work.workDay === date){
+                                        return work.workTime;
+                                    }
+                                }
+                            }
+                        }
+                    } %>
+
+                    <tbody>
+
+                        <% for(let team of teamList.employees){ %> 
+                            <tr>
+                                <td><%= team.username %></td> 
+                                <% for(let i =1; i<8; i++){ %> 
+                                    <td><%= schedule(team.username, newDateCopy) %></td> 
+                                    <% newDateCopy = new Date(newDateCopy).getTime() + 86400000 %> 
+                                    <% newDateCopy = String(new Date(newDateCopy)) %> 
+                                <% } %> 
+                            </tr>
+                            <% newDateCopy = newDate%>
+                        <% } %>    
+
+                    </tbody>
+                </table>
+                <a href="/home" class="back-btn">Back to Home</a>
+            </div>
+        </main>
+        <div class="popup">
+            <form action="/firm/logshift" method="post" class="popup-form">
+                <input type="text" name="date" id="date">
+                <input type="text" name="employname" id="employ-name">
+                <input type="text" name="change" id="change">
+                <button class="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+    <script src="/javascripts/shifttable.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

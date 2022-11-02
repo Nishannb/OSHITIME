@@ -7,10 +7,9 @@ const {requireLogin}= require('../middleware/business/middleware')
 const Employee= require('../models/employee');
 
 
-
-router.get('/register', (req,res)=>{
+router.get('/register', wrapAsync((req,res)=>{
     res.render('business/register')
-})
+}))
 
 router.post('/register', wrapAsync(async(req,res)=>{
     const {username, email, nearestLocation, phoneNum, password, RePassword, pinCode}= req.body;
@@ -28,9 +27,9 @@ router.post('/register', wrapAsync(async(req,res)=>{
     }
 }))
 
-router.get('/login', (req,res)=>{
+router.get('/login', wrapAsync((req,res)=>{
     res.render('business/login');
-})
+}))
 
 router.post('/login', wrapAsync(async(req,res)=>{
     const{ username, password}= req.body;
@@ -46,21 +45,20 @@ router.post('/login', wrapAsync(async(req,res)=>{
     }
 }))
 
-router.post('/logout', requireLogin, ((req,res)=>{
+router.post('/logout', requireLogin, wrapAsync((req,res)=>{
     req.flash('success', 'Successfully logged Out..')
     req.session.currentAccount = null;
     return res.redirect('/firm/login')
 }))
 
-router.get('/team', requireLogin, async(req,res)=>{
+router.get('/team', requireLogin, wrapAsync(async(req,res)=>{
     const teamList= await Businesses.findById(req.session.currentAccount).populate('employees')
-    console.log(teamList)
     res.render('business/teams/team', {teamList})
-})
+}))
 
-router.get('/addteam',requireLogin, async(req,res)=>{ 
+router.get('/addteam',requireLogin, wrapAsync(async(req,res)=>{ 
     res.render('business/teams/addteam')
-})
+}))
 
 router.post('/addteam',requireLogin, wrapAsync(async(req,res)=>{
     const{username, perHour, pinCode, email, password=process.env.RANDOM_STR}= req.body;
@@ -85,7 +83,7 @@ router.post('/addteam',requireLogin, wrapAsync(async(req,res)=>{
     res.redirect('/firm/addteam')
 }))
 
-router.get('/insights',requireLogin, async(req,res)=>{
+router.get('/insights',requireLogin, wrapAsync(async(req,res)=>{
     currentMonth = req.query.month
     if(Object.keys(req.query).length===0){
         currentMonth = Date().slice(4,7)
@@ -113,16 +111,55 @@ router.get('/insights',requireLogin, async(req,res)=>{
     }
     
     res.render('business/insights', {teamList, currentMonth})
-})
+}))
 
+router.get('/manageshift',requireLogin, wrapAsync(async(req,res)=>{
+    if(!req.query.timeperiod){
+        let date = Date()
+        for(i=86400000; i<=518400000; i=i+86400000){
+            if(String(date).slice(0,3)!=='Mon'){
+                date = Date.now() + i
+                date = new Date(date)
+            }
+        }
+        date = String(date).slice(0,15)
+        let testDate = new Date(date).getTime() + 518400000
+        testDate = new Date(testDate)
+        testDate = String(testDate).slice(0,15)
+        timeperiod = `${date}-${testDate}`
+    } else{
+        timeperiod = req.query.timeperiod
+    }
+    date = timeperiod.slice(0,15)
+    testDate = timeperiod.slice(16,31)
+    const teamList= await Businesses.findById(req.session.currentAccount).populate('employees')
+    res.render('business/manageshift', {teamList, date, testDate})
+}))
 
-router.get('/about', (req,res)=>{
-    res.render('business/about')
-})
-router.get('/contact', (req,res)=>{
+router.post('/logshift', requireLogin, wrapAsync(async(req,res)=>{
+    const {date, employname,change}= req.body;
+    const teamList= await Businesses.findById(req.session.currentAccount).populate('employees');
+    for(let team of teamList.employees){
+        if(team.username == employname){
+            const employee = await Employee.findOne({username: team.username})
+            employee.workDetail.unshift({workDay:`${date.slice(4,15)}`, workTime: change})
+            await employee.save()    
+            break
+        }
+    }
     
+    res.redirect('/firm/manageshift')
+}))
+
+//check for error - error msg reported previously 
+router.get('/about',requireLogin, wrapAsync((req,res)=>{
+    res.render('business/about')
+}))
+
+//check for error - error msg reported previously --login not required per now
+router.get('/contact', wrapAsync((req,res)=>{
     res.render('business/contact')
-})
+}))
 
 
 module.exports = router;

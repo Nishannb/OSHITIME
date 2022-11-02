@@ -26,7 +26,7 @@
                             
                             <div class="sub-card">
                                 <p>Month:</p>
-                                <p>Sept</p>
+                                <p><%= month %></p>
                             </div>
                             <div class="sub-card">
                                 <p>Total days <br> worked:</p>
@@ -45,16 +45,21 @@
                             <small>Tax deduction calculation will be done shortly.. </small>
                         </div>
                     </div>
+                    <a href="/user/schedule">Manage Schedule</a>
                     <div class="option">
                         <small>This project was initated to provide part-time employees with early salary without any commission charged.
                             So, we are working towards it to make it happen. Soon you will be able to spend your money on same day of Earning.
                         If this idea sounds cool, click below button once  to apply for Oshi Wallet Beta version. </small>
-                        <button formaction="#" id="payslip">Oshi Wallet pilot</button>
+                        <a href= '/firm/contact' id="payslip"><button>Oshi Wallet pilot</button></a>
                     </div>
                 </aside>
                 <aside class="rgt-square">
                     <div class="square-heading">
                         <h1>Oshi Payslip <br><span>- <%= username %> </span></h1>
+                        <form action="/user/logout" method="post">
+                            <button>Logout</button>
+                        </form>
+                        
                     </div>
                 </aside>
             </div>
