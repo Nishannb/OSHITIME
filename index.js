@@ -21,7 +21,9 @@ const MongoStore = require('connect-mongo');
 const dbUrl= process.env.DB_URL || 'mongodb://localhost:27017/testOshiTime';
 const secret= process.env.SECRET || 'thisisnotasecret'
 
-mongoose.connect('mongodb://localhost:27017/testOshiTime')
+mongoose.connect(dbUrl)
+
+const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/testOshiTime'
 
 const db= mongoose.connection;
 db.on('error', console.error.bind(console, 'Connection Error'));
