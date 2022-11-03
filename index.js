@@ -23,7 +23,6 @@ const secret= process.env.SECRET || 'thisisnotasecret'
 
 mongoose.connect(dbUrl)
 
-const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/testOshiTime'
 
 const db= mongoose.connection;
 db.on('error', console.error.bind(console, 'Connection Error'));

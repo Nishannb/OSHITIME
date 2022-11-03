@@ -19,7 +19,11 @@ router.post('/register', wrapAsync(async(req,res)=>{
             username: username, email: email, location: nearestLocation, phoneNum: phoneNum, password: hashpw, pinCode:pinCode})
             await registerBusiness.save();
             req.session.currentAccount= registerBusiness.id;
+<<<<<<< HEAD
             req.session.currentAccountName = registerBusiness.username;
+=======
+            req.session.currentAccountName = foundBusiness.username;
+>>>>>>> f853d87b2f75682395af44e110d42942eb21a17d
             req.flash('success', 'Successfully registered your Business account')
             return res.redirect('/home')
     } else{
