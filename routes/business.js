@@ -27,25 +27,29 @@ router.post('/register', wrapAsync(async(req,res)=>{
     }
 }))
 
-router.get('/login', wrapAsync((req,res)=>{
+router.get('/login', ((req,res)=>{
     res.render('business/login');
 }))
 
 router.post('/login', wrapAsync(async(req,res)=>{
     const{ username, password}= req.body;
     const foundBusiness = await Businesses.findAndValidate(username, password);
+    let Link;
     if(foundBusiness){
         req.session.currentAccount = foundBusiness.id;
         req.session.currentAccountName = foundBusiness.username;
         req.flash('success', 'Successfully logged In..')
-        return res.redirect('/home')
+        Link = '/home'
+        // return res.redirect('/home')
     } else{
         req.flash('error', 'Incorrect Username or password..')
-        return res.redirect('/firm/login')
+        Link = '/firm/login'
+        // return res.redirect('/firm/login')
     }
+    return res.redirect(Link)
 }))
 
-router.post('/logout', requireLogin, wrapAsync((req,res)=>{
+router.post('/logout', requireLogin, ((req,res)=>{
     req.flash('success', 'Successfully logged Out..')
     req.session.currentAccount = null;
     return res.redirect('/firm/login')
@@ -152,12 +156,12 @@ router.post('/logshift', requireLogin, wrapAsync(async(req,res)=>{
 }))
 
 //check for error - error msg reported previously 
-router.get('/about',requireLogin, wrapAsync((req,res)=>{
+router.get('/about',requireLogin, ((req,res)=>{
     res.render('business/about')
 }))
 
 //check for error - error msg reported previously --login not required per now
-router.get('/contact', wrapAsync((req,res)=>{
+router.get('/contact', ((req,res)=>{
     res.render('business/contact')
 }))
 
