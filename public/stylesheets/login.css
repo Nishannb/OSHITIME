@@ -54,10 +54,6 @@ main .circle_userpage{
     align-items: center;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> f853d87b2f75682395af44e110d42942eb21a17d
 .lft-square .square-heading h2{
     color: grey;
     display: block;
@@ -191,10 +187,6 @@ form #payslip{
 .footer .container{
     width: 100vw;
     height: 5vh;
-<<<<<<< HEAD
-=======
-    background-color: gray;
->>>>>>> f853d87b2f75682395af44e110d42942eb21a17d
     text-align: center;
 }
 
@@ -204,16 +196,12 @@ form #payslip{
 }
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f853d87b2f75682395af44e110d42942eb21a17d
-@media (max-width: 635px){
+@media (max-width: 1010px){
     .background{
         display: none;
     }
     .main-container{
-        align-items: flex-start;
+        align-items: center;
     }
     .rect-box{
         flex-direction: column;
@@ -241,20 +229,5 @@ form #payslip{
 
 }
 
-<<<<<<< HEAD
-/* CSS for error page only */
-
-.rect-box .lft-square-error-page{
-    width: 80%;
-    background-color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* CSS for error page only */
-
-=======
->>>>>>> f853d87b2f75682395af44e110d42942eb21a17d
 
 

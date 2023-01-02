@@ -20,8 +20,10 @@ const mongoSanitize=require('express-mongo-sanitize');
 const MongoStore = require('connect-mongo');
 const dbUrl= process.env.DB_URL || 'mongodb://localhost:27017/testOshiTime';
 const secret= process.env.SECRET || 'thisisnotasecret'
+// const dbUrl = 'mongodb://localhost:27017/testOshiTime'
 
 mongoose.connect(dbUrl)
+
 
 
 const db= mongoose.connection;
@@ -75,7 +77,7 @@ app.use((req,res,next)=>{
 })
 
 app.get('/', (req,res)=>{
-    res.render('business/login')
+    return res.redirect('/firm/login')
 })
 
 app.use('/home', homeRoute)

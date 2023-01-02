@@ -1,12 +1,12 @@
 <% layout('layout/boilerplate')%>
 
-<div class="col-6">
+<div class="col-6 timeCard-section">
     <%- include('../partials/flash')  %> 
     <aside class="middle_col container-sm">
         <div class="userinput_section">
             <form action="/home/start" method="post" class="formInput">
                 <label for="employee_num">Employee ID: </label>
-                <input type="text" name="username" id="employee_num" placeholder="e.g. Nishan123" required>
+                <input type="text" name="username" id="employee_num" placeholder="Employee ID" required>
                 <div class="buttons">
                     <button class="starttrack">Start Work</button>
                     <button class="stoptrack" formaction="/home/stop">End Work</button>
@@ -15,7 +15,7 @@
         </div>
     </aside>
 </div>
-<div class="col-3">
+<div class="third-section col-3 ">
     <aside class="right-col">
         <div class="profile_section">
             <div class="profile-items">

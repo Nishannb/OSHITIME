@@ -1,6 +1,14 @@
 <% layout('layout/boilerplate')%>
+<script src="/javascripts/table2excel.js"></script>
 
-<div class="col-9">
+
+
+<div class="message-info">
+    <h4>This screen have tabular information, which cannot be viewed in mobile screen. Please use laptop for accessing Insights page</h4>
+    <p><strong>You can view your employees worktime history and also download those information on excel or csv file from this page.</strong></p>
+</div>
+
+<div class="col-9 insights_section">
     <div class="logout-btn">
         <div class="profile-items">
             <a href="#"> <%= currentAccountName %> </a> 
@@ -12,6 +20,7 @@
     <div class="body-section">
         <div class="heading-section">
             <h1>Team Insights</h1>
+            <button id="downloadexcel">Export To Excel</button>
             <form action="/firm/insights">
                 <select name="month" id="month">
                     <option value="" disabled selected>Select Month</option>
@@ -30,35 +39,51 @@
                 </select>
                 <button class="month-submit">Submit</button>
             </form>
+            
         </div>
+        
         <hr>
         <div class="table-container">
-            <table>
-                <tr class="table-heading">
-                    <th>
-                        <h6>Employee</h6>
-                    </th>
-                    <th>
-                        <h6>Month</h6>
-                    </th>
-                    <th>
-                        <h6>Total Worked Hours</h6>
-                    </th>
-                </tr>
-                <% for(let team of teamList){ %> 
-                    <tr class="table-data">
-                        <td>
-                            <p><%= team.employee  %> </p> 
-                        </td>
-                        <td>
-                            <p><%= currentMonth %> </p>
-                        </td>
-                        <td>
-                            <p><%= team.workTime  %></p>
-                        </td>
+            <table id="table">
+                <thead>
+                    <tr class="table-heading">
+                        <th>
+                            <h6>Employees</h6>
+                        </th>
+                        <th>
+                            <h6>Month</h6>
+                        </th>
+                        <th>
+                            <h6>Time Card (hh:mm:ss)</h6>
+                        </th>
+                        <th>
+                            <h6>Total Worked Hours</h6>
+                        </th>
                     </tr>
-                <% } %> 
-                
+                </thead>
+                <tbody>
+                    <% for(let team of teamList){ %> 
+                        <% for(let time of team.workHour) { %>
+                            <% if(time.workMonth.includes(currentMonth)){ %>
+                        <tr class="table-data">
+                            <td>
+                                <small><%= team.username  %> </small> 
+                            </td>
+                            <td>
+                                <small><%= time.workMonth %> </small>
+                            </td>
+                            <td>
+                                <small><%= time.timeCard  %></small>
+                            </td>
+                            <td>
+                                <small><%= (time.workTime/3600000).toFixed(1)  %></small>
+                            </td>
+                            
+                        </tr>
+                        <% } %> 
+                        <% } %> 
+                    <% } %> 
+                </tbody>
             </table>
         </div>
     </div>

@@ -285,6 +285,18 @@ div .body-section .team-data li {
     list-style: none;
 }
 
+.col-6 .container-body a{
+    padding: 5px 10px;
+    border: 1px solid crimson;
+    width: fit-content;
+    background-color: crimson;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+
 /* Team page body section */
 
 /* Adding Team page body section */
@@ -340,28 +352,58 @@ div .container-body .submit{
 /* Adding Insights page body section */
 
 
+
 .table-container{
-    width: 50vh;
-    height: 50vh;
+    /* width: 50vh; */
+    height: 60vh;
     overflow-y: scroll;
-    border: 1px solid gray;
-    border-radius: 10px;
+    /* border: 1px solid gray; */
+    /* border-radius: 10px; */
 }
+
+#downloadexcel{
+    background-color: rgb(220, 20, 60, 70%);
+    color: white;
+    height: fit-content;
+    padding: 10px;
+}
+#downloadexcel:hover{
+    background-color: rgb(220, 20, 60);
+}
+
 .table-container::-webkit-scrollbar{
     display: none;  
 }
 
-div .table-heading th h6{
+div .table-heading {
     background-color: blue;
+}
+div .table-heading th h6{
+    text-align: center;
     color: white;
     padding: 5px;
-    margin: 0.7rem;
-    border-radius: 4px;
+    margin: 0.5rem;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    
 }
-div .table-data td p{
-    background-color: rgb(215, 215, 215);
+
+.table-heading, .table-data {
+    border: 2px solid gray;
+}
+
+.table-data:hover{
+    background-color: rgb(128, 128, 128, 50%);
+}
+
+.table-heading th, .table-data td{
+    border-right: 2px solid gray ;
+}
+div .table-data td {
+    /* background-color: rgb(215, 215, 215); */
     color: black;
-    padding: 5px; 
+    padding: 5px;
     margin: 0 0.8rem;
     text-align: center;
 
@@ -371,6 +413,119 @@ div .body-section .heading-section form button{
     color: white;
 }
 
+.message-info{
+    display: none;
+}
+
 /* Adding Insights page body section */
 
+@media screen and (max-width: 1010px) {
 
+    /* Login Page Section  */
+    .main-container .rgt
+
+
+    /* Login Page Section  */
+
+    /* Home page section */
+
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
+    /* .navbar-column{
+        display: none;
+    } */
+    .navbar_col{
+        width: 100vw;
+        height: fit-content;
+        margin: auto;
+    }
+    .col-6{
+        width: 100%;
+    }
+
+    .col-6 .userinput_section{
+        margin: auto;
+    }
+
+    .formInput{
+        width: 90vw;
+        height: fit-content;
+        align-items: center;
+    }
+    .formInput input{
+        width: 80vw;
+    }
+
+    .formInput div{
+        width: 80vw;
+    }
+
+    .third-section{
+        width: 100%;
+        align-items: center;
+    }
+    .third-section .right-col{
+        display: flex;
+        flex-direction: column-reverse;
+        margin: auto;
+        width: 90vw;
+    }
+    .third-section .right-col .profile-items{
+        display: none;
+    }
+    /* Home page section */
+
+    /* Team Page Section  */
+    .teamlist-section {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100vw;
+    }
+
+    .teamlist-section .body-section{
+        width: 95vw;
+        margin: 10px;
+        max-height: 40vh;
+        height: fit-content;
+        /* overflow: scroll; */
+    }
+
+    .teamlist-section .body-section .team-data{
+        overflow-y: scroll;
+    }
+
+    .teamlist-section .logout-btn{
+        width: 95vw;
+        justify-content: center;
+    }
+
+    .teamlist-section .logout-btn .profile-items{
+        display: none;
+    }
+
+
+    /* Team Page Section  */
+
+    /* Insights Page section  */
+    .insights_section{
+        display: none;
+    }
+
+    .message-info{
+        display: block;
+        margin: auto;
+        color: gray;
+        width: 85vw;
+    }
+
+    .col-6 .container-body{
+        width: 95vw;
+        height: fit-content;
+        margin-bottom: 25px;
+    }
+
+
+    /* Insights Page section  */
+}

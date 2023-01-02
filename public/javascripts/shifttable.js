@@ -12,6 +12,9 @@ const dropDownMenu = document.querySelector("#timeperiod")
 
 
 
+
+
+
 for (tds of td){   
     tds.addEventListener("dblclick", async function(e){
         input.value= e.srcElement.innerHTML

@@ -3,18 +3,17 @@ const router = express.Router();
 const wrapAsync = require('../utils/wrapAsync');
 const OnDuty= require('../models/onduty');
 const Employee= require('../models/employee');
-const {requireLogin}= require('../middleware/business/middleware')
+const { requireLogin }= require('../middleware/business/middleware')
 
 
 router.get('/',requireLogin, async(req,res)=>{
     const onDutyUser = await OnDuty.find({})
-    // const todayDate = Date().slice(4,10)
     return res.render('business/home', {onDutyUser})
 })
 
 router.post('/start',requireLogin,wrapAsync(async(req,res)=>{
     const {username}= req.body;
-    const todayDate= Date().slice(4,10) 
+    const todayDate= Date().slice(4,15) 
     const findUser = await Employee.findOne({username}); //check for error
     if(!findUser){
         req.flash('error', 'Incorrect Employee ID..')
@@ -51,9 +50,12 @@ router.post('/stop',requireLogin,wrapAsync(async(req,res)=>{
             return res.redirect('/home')    
         }
         else{
+            StartedTime = new Date(confirmonDuty.startWork.startTime)
+            StartedTime = StartedTime.toString().slice(16,24)
             user.workHour.unshift({
                 workMonth:`${confirmonDuty.startWork.startMonth}`,
-                workTime: `${Date.now()-confirmonDuty.startWork.startTime}`
+                workTime: `${Date.now()-confirmonDuty.startWork.startTime}`, 
+                timeCard: `${StartedTime} - ${Date().slice(16,24)}`
             } )
             await user.save()
             await OnDuty.deleteOne({username: `${username}`})

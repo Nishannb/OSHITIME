@@ -46,6 +46,10 @@ button:hover{
     border: 1px solid white;
 }
 
+.heading-group .message-info{
+    display: none;
+}
+
 /* SIGN UP COntainer */
 
 
@@ -113,6 +117,39 @@ aside .input-box:nth-of-type(1){
 }
 aside .input-boxes button{
     margin: 20px 10px;  
+}
+
+
+@media screen and (max-width: 1010px) {
+
+    /* Register Page Section  */
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .heading-group {
+        background-color: pink;
+        margin: 0;
+        display: block;
+        
+    }
+
+    .heading-group .brand-name{
+        display: none;
+    }
+
+    .heading-group .message-info{
+        text-align: center;
+        display: block;
+        color: white;
+    }
+
+
+    /* Register Page Section  */
 }
 
 

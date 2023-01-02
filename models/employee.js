@@ -13,6 +13,9 @@ const employeeSchema = new Schema ({
             },
             workTime:{
                 type: Number
+            }, 
+            timeCard: {
+                type: String
             }
     }], 
     perHour: {
