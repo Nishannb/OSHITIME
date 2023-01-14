@@ -1,38 +1,464 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App{
+  width: 100vw;
+  height: 95vh;
+}
+
+/* Common */
+
+input{
+  width: 100%;
+  padding: 10px;
+  border: 0.1px solid grey;
+}
+label{
+  text-align: left;
+  color: gray;
+  font-weight: 600;
+}
+
+h2{
+  color: gray;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button{
+  padding: 9px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: crimson;
+  font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Common */
+
+.App .error-msg{
+  background-color: burlywood;
+  color: crimson;
+  text-align: center;
+  letter-spacing: 0.2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-container{
+  background-color: royalblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  height: 18%;
+  width: 100%;
+}
+
+.navbar-container .navbar-brand {
+  margin: auto;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+}
+
+.navbar-container .navbar-menu {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+
+
+.menu-container {
+  background-color: pink;
+}
+
+.menu-container .menu ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+}
+.menu ul li {
+  list-style: none;
+}
+.menu ul li a{
+  text-decoration: none;
+  font-size: larger;
+  font-weight: 500;
+  color: royalblue;
+  font-weight: 700;
+}
+
+.home-container .display-box{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.home-container .display-box .Work{
+  background-color: rgb(251, 117, 139);
+  width: 60vw;
+  padding: 3px;
+  text-align: center;
+  color: white;
+  border-radius: 3px;
+}
+
+.home-container .display-box label{
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  margin-top: 10px;
+  font-size: larger;
+}
+
+.home-container .display-box input {
+  padding: 10px 50px;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-top: 5px;
+  width: fit-content;
+}
+
+.home-container .display-box input[type="text"]{
+    font-weight: 600;
+    text-align: center;
+    font-size: larger;
+}
+
+.home-container .keypad-container{
+  background-color: white;
+}
+
+.home-container .keypad{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: auto;
+  flex-wrap: wrap;
+  background-color: rgb(128, 128, 128, 30%);
+  width: 90vw;
+  height: fit-content;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 20px 0px;
+}
+
+.home-container .keypad .keyNum {
+  width: 25%;
+  border: 1px solid transparent;
+  background-color: white;
+  margin: 10px;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+/* Team */
+
+.team-container{
+  margin-top: 20px;
+  background-color: white;
+}
+
+.team-container .heading-section {
+  width: 90vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading-section h1{
+  color: gray;
+}
+
+.heading-section button{
+  background-color: royalblue;
+  border: none;
+  padding: 5px 15px;
+  color: white;
+  font-size: xx-large;
+  margin-bottom: 2px;
+}
+.teamlist-container{
+  width: 90vw;
+  margin: auto;
+}
+
+.teamlist-container ol{
+  list-style: none;
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: large;
+}
+
+.teamlist-container ol li {
+  margin-top: 5px;
+}
+
+
+/* Team */
+
+/* Add Team */
+
+.addteam-container .heading{
+  margin: 20px 10px;
+  background-color: white;
+}
+
+.addteam-container .heading h1{
+  color: royalblue;
+  font-size: 2.5rem;
+}
+
+.addteam-container .heading p{
+  color: grey;
+  font-size: 1.8rem;
+}
+
+
+.addteam-container form{
+  width: 80vw;
+  margin: auto;
+}
+
+form .btns {
+  margin-top: 10px;
+  display: flex;
+}
+
+.addteam-container form button {
+  padding: 7px 10px;
+  background-color: rgb(0, 0, 255, 80%);
+  color: white;
+  border: none;
+}
+
+.addteam-container form .inputboxes {
+  margin-top: 10px;
+}
+
+
+form a {
+  padding: 6px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* Add Team */
+
+/* Login */
+
+.login-container {
+  background-color: rgb(65, 105, 225, 80%);
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container .login-form{
+  background-color: white;
+  padding: 10px 15px;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: darkolivegreen;
+}
+
+.login-container .login-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70vw;
+  height: fit-content;
+  text-align: center;
+}
+
+.login-form form input,
+.login-form form button{
+  padding: 7px;
+  margin: 8px;
+  
+}
+
+.login-form form button{
+  background-color: royalblue;
+  border: none;
+  color: white;
+  font-size: large;
+  letter-spacing: 0.1rem;
+}
+
+
+/* Login */
+
+/* Insights */
+
+.insights-container .time-input{
+  display: flex;
+  justify-content: space-around;
+  height: 35px;
+  margin: 10px;
+}
+
+.time-input input{
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 255, 70%);
+  padding: 0;
+  width: fit-content;
+}
+
+.time-input .table-to-excel {
+  border: none;
+  background-color: rgb(4, 132, 4);
+  padding: 8px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.table-container table {
+  width: 100vw;
+  overflow-x: scroll;
+  empty-cells: show;
+  border: none;
+  overflow-y: hidden;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+td, th {
+  border: 1px solid rgb(128, 128, 128, 50%);
+  border-collapse: collapse;
+  text-align: center;
 }
+
+.table-container table th{
+  background-color: blue;
+  padding: 10px 0px;
+  color: white;
+  font-weight: 600;
+}
+
+.other-option {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.other-option .edit-data{
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 7px;
+  background-color: yellow;
+  border: none;
+  font-weight: 500;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+/* Insights */
+
+
+/* EditDBData  */
+
+.App .editdbdata-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.editdbdata-container p{
+  color: red;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.editdbdata-container .heading-section{
+  margin: 15px;
+  text-align: center;
+}
+
+.editdbdata-container .heading-section h3{
+  color: royalblue;
+  font-size: 2rem;
+}
+
+.editdbdata-container .heading-section small,
+.edit-form small{
+  font-size: 0.7rem;
+  color: gray;
+  text-align: left;
+}
+
+.editdbdata-container .edit-form{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: auto;
+}
+
+.edit-form small{
+  display: block;
+}
+
+.edit-form input{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+/* EditDBData  */
+
+
+/* Footer */
+
+.footer-container {
+  background-color: grey;
+  position: absolute;
+  bottom: 0;
+  height: 5vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+.footer-container .footer {
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  z-index: -1;
+}
+
+/* Footer */
+
+
+/* Error */
+.App .error{
+  background-color: pink;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error h4,
+.error a {
+  padding: 15px;
+  letter-spacing: 0.2rem;
+}
+
+.error h4{
+  color: red;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+/* Error */
+
+
+
+
